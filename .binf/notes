@@ -1,8 +1,0 @@
-# This is an attempt to pull out the files that arent needed
-# Special Thanks to Hayate BTW on Exynos Dev Group
-
-Android.bp
-Android.mk
-AndroidProducts.mk
-device.mk 
-setup-makefiles.sh 
