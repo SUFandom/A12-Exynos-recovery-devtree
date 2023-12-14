@@ -1,4 +1,4 @@
-/system             ext4      system                                flags=display=system;logical
+/system             ext4      system                                flags=display=system;logical;fileencryption=aes-256-xts:aes-256-cts:v.2+inlinecrypt_optimized
 /vendor_image       emmc      /dev/block/mapper/vendor              flags=backup=0;flashimg=1;display="Vendor Image"
 /product            ext4      product                               flags=display=product;logical
 /odm                ext4      odm                                   flags=display=odm;logical
