@@ -10,6 +10,8 @@
 #
 # Region: XTC
 #
+# FBE : OFF
+#
 # TWRP ONLY SUPPORTS: TWRP-11 
 #
 ```
