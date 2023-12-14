@@ -1,5 +1,7 @@
 # Android device tree for samsung SM-A127F (a12s)
 
+Better README SOON
+
 ```
 #
 # Copyright (C) 2023 The Android Open Source Project
