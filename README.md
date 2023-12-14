@@ -10,5 +10,6 @@
 #
 # Region: XTC
 #
-# 
+# TWRP ONLY SUPPORTS: TWRP-11 
+#
 ```
