@@ -1,7 +1,7 @@
-/system_image       ext4      /dev/block/by-name/system              flags=display="System Partition";logical;backup=0;flashimg=1
-/vendor_image       ext4      /dev/block/by-name/vendor              flags=backup=0;flashimg=1;display="Vendor Image"
-/product_image      ext4      /dev/block/by-name/product             flags=display="Product Image";logical;backup=0;flashimg=1
-/odm_image          ext4      /dev/block/by-name/odm                 flags=display="ODM Image";logical
+/system             ext4      /dev/block/by-name/system              flags=display="System Partition";logical;backup=0;flashimg=1
+/vendor             ext4      /dev/block/by-name/vendor              flags=backup=0;flashimg=1;display="Vendor Image"
+/product            ext4      /dev/block/by-name/product             flags=display="Product Image";logical;backup=0;flashimg=1
+/odm                ext4      /dev/block/by-name/odm                 flags=display="ODM Image";logical
 /boot               emmc      /dev/block/by-name/boot                flags=display=boot
 /recovery           emmc      /dev/block/by-name/recovery            flags=display=recovery
 /metadata           ext4      /dev/block/by-name/metadata            flags=display=metadata
@@ -22,6 +22,7 @@
 /system_dlkm        ext4      system_dlkm                            flags=display=system_dlkm;logical
 /init_boot          emmc      /dev/block/by-name/init_boot           flags=display=init_boot
 /usb-otg            auto      /dev/block/sda1 /dev/block/sda         flags=display="USB-OTG";storage;wipeingui;removable
+
 
 
 # PHYSWIZZ TABLE
