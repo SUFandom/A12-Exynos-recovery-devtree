@@ -1,7 +1,7 @@
-/system             ext4      system                                flags=display=system;logical
+/system_image       emmc      /dev/block/mapper/system              flags=display="System Partition";logical;backup=0;flashimg=1
 /vendor_image       emmc      /dev/block/mapper/vendor              flags=backup=0;flashimg=1;display="Vendor Image"
-/product            ext4      product                               flags=display=product;logical
-/odm                ext4      odm                                   flags=display=odm;logical
+/product_image      emmc      /dev/block/mapper/product             flags=display="Product Image";logical;backup=0;flashimg=1
+/odm_image          emmc      /dev/block/mapper/odm                 flags=display="ODM Image";logical
 /boot               emmc      /dev/block/by-name/boot               flags=display=boot
 /recovery           emmc      /dev/block/by-name/recovery           flags=display=recovery
 /metadata           ext4      /dev/block/by-name/metadata           flags=display=metadata
@@ -22,3 +22,18 @@
 /system_dlkm        ext4      system_dlkm                           flags=display=system_dlkm;logical
 /init_boot          emmc      /dev/block/by-name/init_boot          flags=display=init_boot
 /usb-otg            auto      /dev/block/sda1 /dev/block/sda        flags=display="USB-OTG";storage;wipeingui;removable
+
+
+# PHYSWIZZ TABLE
+
+# /system_image  emmc  /dev/block/mapper/system  flags=backup=0;flashimg=1;display="System Image"
+
+# /vendor_image  emmc  /dev/block/mapper/vendor  flags=backup=0;flashimg=1;display="Vendor Image"
+
+# /product_image  emmc  /dev/block/mapper/product  flags=backup=0\;flashimg=1\;display=\"Product Image\"";
+
+# /odm_image  emmc  /dev/block/mapper/odm  flags=backup=0;flashimg=1;display="Odm Image"
+
+# /external_sd vfat  /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=storage;wipeingui;removable
+
+# /usb-otg auto  /dev/block/sda1 /dev/block/sda   flags=display="USB-OTG";storage;wipeingui;removable
