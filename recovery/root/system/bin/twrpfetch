@@ -33,7 +33,7 @@ printinfo() {
     msg "           By SUFandom Expects: 13 or 14 idk"
     msg "Hardware: $(getprop ro.hardware)"
     msg "Platform: $(getprop ro.board.platform)"
-    msg "SOC Manufacturer $(getprop ro.soc.manufacturer)"
+    msg "SOC Manufacturer (If none, that's ok): $(getprop ro.soc.manufacturer)"
     msg "END OF TWRPFETCH"
     barrier_2
 }
