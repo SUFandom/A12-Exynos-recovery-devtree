@@ -1,5 +1,5 @@
 #!/system/bin/sh
-#!/bin/sh
+
 # /bin/sh CALL IS MEANT FOR DIAGNOSTICS!
 
 msg() {
