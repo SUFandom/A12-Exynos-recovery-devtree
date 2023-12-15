@@ -3,25 +3,28 @@
 
 # People who want to edit this: Please use TAB, not spaces to separate, thx
 
-/product_image  emmc    /dev/block/mapper/product   flags=backup=0;flashimg=1
-/odm_image  emmc    /dev/block/mapper/odm   flags=backup=0;flashimg=1;display="ODM Map Block"
-/system_image   emmc    /dev/block/mapper/system    flags=backup=0;flashimg=1;display="System Map Block"
-/vendor_image   emmc    /dev/block/mapper/vendor    flags=backup=0;flashimg=1;display="Vendor Map Block"
-/external_sd    vfat    /dev/block/mmcblk1p1    /dev/block/mmcblk1  flags=storage;wipeingui;removable;display="Micro SDCard" 
+/product_image  emmc    /dev/block/mapper/product   flags=backup=0;flashimg=1;display="Product EMMC"
+/odm_image  emmc    /dev/block/mapper/odm   flags=backup=0;flashimg=1;display="ODM EMMC Image"
+/system_image   emmc    /dev/block/mapper/system    flags=backup=0;flashimg=1;display="System EMMC Image"
+/vendor_image   emmc    /dev/block/mapper/vendor    flags=backup=0;flashimg=1;display="Vendor Image"
+/external_sd    vfat    /dev/block/mmcblk1p1    /dev/block/mmcblk1  flags=storage;wipeingui;removable
+/system     ext4    /dev/block/mapper/system   flags=display="System";backup=1;wipeingui
+/vendor     ext4    /dev/block/mapper/vendor   flags=display="vendor";wipeingui;backup=1
+/product    ext4    /dev/block/mapper/product  flags=display="Product Image";backup=1;flashimg=1;wipeingui
+/odm    ext4    /dev/block/mapper/odm  flags=display="ODM Partition";wipeingui
+/usb-otg    auto    /dev/block/sda1 /dev/block/sda  flags=display="USB-OTG";storage;wipeingui;removable
+
 # AVOID USING /sdcard and sdfat, its not supported...
 
 # Separate
 # These will be separated due to some functions
 # DO NOT PLAY AROUND WITH wipeingui
-/system     ext4    /dev/block/by-name/system   flags=display="System";logical;backup=1;wipeingui
-/vendor     ext4    vendor   flags=display="vendor";logical;wipeingui
-/product    ext4    /dev/block/by-name/product  flags=display="Product Image";logical;backup=0;flashimg=1;wipeingui
-/odm    ext4    /dev/block/by-name/odm  flags=display="ODM Partition";logical;wipeingui
-/boot   emmc    /dev/block/by-name/boot flags=display="Boot and also called Android Kernel"
+
+/boot   emmc    /dev/block/by-name/boot flags=display="Boot, also called Android Kernel"
 /recovery   emmc    /dev/block/by-name/recovery flags=display=recovery
 /metadata   ext4    /dev/block/by-name/metadata flags=display=metadata
 /data   f2fs    /dev/block/by-name/userdata flags=display="Device Data";wipeingui
-/cache  ext4    /dev/block/by-name/cache    flags=display=cache
+/cache  ext4    /dev/block/by-name/cache    flags=display=cache;wipeingui
 /efs    ext4    /dev/block/by-name/sec_efs  flags=display=efs
 /sec_efs    ext4    /dev/block/by-name/sec_efs  flags=display=sec_efs
 #/carrier    ext4    /dev/block/by-name/carrier  flags=display=carrier
@@ -35,7 +38,6 @@
 /vendor_dlkm    ext4    /dev/block/by-name/vendor_dlkm  flags=display=vendor_dlkm;logical
 /system_dlkm    ext4    /dev/block/by-name/system_dlkm  flags=display=system_dlkm;logical
 /init_boot  emmc    /dev/block/by-name/init_boot    flags=display=init_boot
-/usb-otg    auto    /dev/block/sda1 /dev/block/sda  flags=display="USB-OTG";storage;wipeingui;removable;wipeingui
 
 
 # Samsung ODE
