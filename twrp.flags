@@ -7,7 +7,7 @@
 /odm_image  emmc    /dev/block/mapper/odm   flags=backup=0;flashimg=1;display="ODM Map Block"
 /system_image   emmc    /dev/block/mapper/system    flags=backup=0;flashimg=1;display="System Map Block"
 /vendor_image   emmc    /dev/block/mapper/vendor    flags=backup=0;flashimg=1;display="Vendor Map Block"
-/external_sd    auto    /dev/block/mmcblk1p1  /dev/block/mmcblk1    flags=storage;wipeingui;removable   # It seems /dev/block/mmcblk0p1 is actually TWRP TMPFS
+/external_sd    vfat    /dev/block/mmcblk1p1    /dev/block/mmcblk1  flags=storage;wipeingui;removable;display="Micro SDCard" 
 # AVOID USING /sdcard and sdfat, its not supported...
 
 # Separate
@@ -15,7 +15,7 @@
 /system     ext4    /dev/block/by-name/system   flags=display="system";logical
 /vendor     ext4    vendor   flags=display="vendor";logical
 /product    ext4    /dev/block/by-name/product  flags=display="Product Image";logical;backup=0;flashimg=1
-/odm    ext4    /dev/block/by-name/odm  flags=display="ODM Mount_immutable";logical
+/odm    ext4    /dev/block/by-name/odm  flags=display="ODM Partition";logical
 /boot   emmc    /dev/block/by-name/boot flags=display="Boot and also called Android Kernel"
 /recovery   emmc    /dev/block/by-name/recovery flags=display=recovery
 /metadata   ext4    /dev/block/by-name/metadata flags=display=metadata

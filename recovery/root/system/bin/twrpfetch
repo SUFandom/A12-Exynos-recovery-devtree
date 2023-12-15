@@ -24,6 +24,7 @@ printinfo() {
     barrier_1
     msg " "
     printico_with_info
+    msg " "
     msg "TWRP FOR GALAXY A12s - $(cat /system/twrp_version.note)"
     barrier_2
     msg "Bootloader ID: $(getprop ro.boot.bootloader)"
