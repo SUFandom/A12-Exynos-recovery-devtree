@@ -1,0 +1,40 @@
+#!/system/bin/sh
+#!/bin/sh
+# /bin/sh CALL IS MEANT FOR DIAGNOSTICS!
+
+msg() {
+    echo "$1"
+}
+
+barrier_1() {
+    msg " "
+    msg "================================"
+}
+
+barrier_2() {
+    msg "================================"
+    msg " "
+}
+
+printico_with_info () {
+    cat /system/twrpinfo/art.txt
+}
+
+printinfo() {
+    barrier_1
+    msg " "
+    printico_with_info
+    msg "TWRP FOR GALAXY A12s - $(cat /system/twrp_version.note)"
+    barrier_2
+    msg "Bootloader ID: $(getprop ro.boot.bootloader)"
+    msg "Android Version Release:"
+    msg "           Reported by GETPROP: $(getprop ro.build.version.release)"
+    msg "           By SUFandom Expects: 13 or 14 idk"
+    msg "Hardware: $(getprop ro.hardware)"
+    msg "Platform: $(getprop ro.board.platform)"
+    msg "SOC Manufacturer $(getprop ro.soc.manufacturer)"
+    msg "END OF TWRPFETCH"
+    barrier_2
+}
+
+printinfo
