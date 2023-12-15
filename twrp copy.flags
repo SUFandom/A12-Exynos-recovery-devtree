@@ -10,11 +10,11 @@
 /metadata           ext4      /dev/block/by-name/metadata           flags=display=metadata
 /data               f2fs      /dev/block/by-name/userdata           flags=display=data
 /cache              ext4      /dev/block/by-name/cache              flags=display=cache
-/sdcard             sdfat     /dev/block/mmcblk0p1                  flags=display=sdcard
+#/sdcard             sdfat     /dev/block/mmcblk0p1                  flags=display=sdcard
 /efs                ext4      /dev/block/by-name/sec_efs            flags=display=efs
 /sec_efs            ext4      /dev/block/by-name/sec_efs            flags=display=sec_efs
-/carrier            ext4      /dev/block/by-name/carrier            flags=display=carrier
-/preload            ext4      /dev/block/by-name/hidden             flags=display=preload
+#/carrier            ext4      /dev/block/by-name/carrier            flags=display=carrier
+#/preload           ext4      /dev/block/by-name/hidden             flags=display=preload
 /modem              emmc      /dev/block/by-name/radio              flags=display=modem
 /misc               emmc      /dev/block/by-name/misc               flags=display=misc
 /keydata            ext4      /dev/block/by-name/keydata            flags=display=keydata
@@ -29,3 +29,9 @@
 /vendor_dlkm        ext4      vendor_dlkm                           flags=display=vendor_dlkm;logical
 /system_dlkm        ext4      system_dlkm                           flags=display=system_dlkm;logical
 /init_boot          emmc      /dev/block/by-name/init_boot          flags=display=init_boot
+
+
+
+# Samsung ODE
+#/dev/block/by-name/keydata		/keydata	ext4	defaults		recoveryonly
+#/dev/block/by-name/keyrefuge		/keyrefuge	f2fs	defaults		recoveryonly
