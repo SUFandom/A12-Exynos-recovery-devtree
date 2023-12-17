@@ -54,7 +54,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/a12s
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/IMAGE
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel.img
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 BOARD_INCLUDE_DTB_IN_BOOTIMG := 
@@ -154,7 +154,7 @@ SHRP_EXTERNAL_ADDON_PATH := "device/samsung/a12s/prebuilt/"
 
 
 # Added ext snippet
-SHRP_EXTERNAL_ADDON_1_NAME := "Yeet FBE Encryption"
+SHRP_EXTERNAL_ADDON_1_NAME := "Yeet FBE Encryption (Multidisabler)"
 SHRP_EXTERNAL_ADDON_1_INFO := "This patch will yeet the FBE, before doing this, please set /data to ext4 then reboot to recovery, then flash this, after that set back /data to f2fs"
 SHRP_EXTERNAL_ADDON_1_FILENAME := "multidisabler-3.1.zip"
 SHRP_EXTERNAL_ADDON_1_BTN_TEXT := "Yeet the FBE"
