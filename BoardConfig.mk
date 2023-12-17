@@ -148,8 +148,9 @@ SHRP_NOTCH := true
 
 SHRP_EXTERNAL_ADDON_PATH := "device/samsung/a12s/prebuilt/"
 
-# RAMDISK FOR LZMA
-LZMA_RAMDISK_TARGETS := recovery
+# # RAMDISK FOR LZMA
+# LZMA_COMPRESSION := -9
+# LZMA_RAMDISK_TARGETS := recovery
 
 
 # Added ext snippet
