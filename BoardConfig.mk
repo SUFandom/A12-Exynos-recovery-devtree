@@ -129,7 +129,7 @@ TW_EXCLUDE_TWRPAPP := true
 
 # SHRP
 
-TW_USE_TOOLBOX := true
+# TW_USE_TOOLBOX := true
 SHRP_PATH := device/samsung/a12s 
 SHRP_MAINTAINER := SUFandom/Nyaruzan-Telegram
 SHRP_DEVICE_CODE := a12s 
@@ -142,11 +142,15 @@ SHRP_DEVICE_TYPE := A/B
 SHRP_AB := true
 SHRP_NO_SAR_AUTOMOUNT := true
 SHRP_HAS_RECOVERY_PARTITION := true
-SHRP_EXCLUDE_MAGISK_FLASH := true # Hide Flashing Magisk Option due to Delta only works
+SHRP_EXCLUDE_MAGISK_FLASH := true # Hide Flashing Magisk Option due to Delta only works on A12 Exynos, Kitsune has yet to report
 SHRP_FLASH := 1
 SHRP_NOTCH := true
 
 SHRP_EXTERNAL_ADDON_PATH := "device/samsung/a12s/prebuilt/"
+
+# RAMDISK FOR LZMA
+LZMA_RAMDISK_TARGETS := recovery
+
 
 # Added ext snippet
 SHRP_EXTERNAL_ADDON_1_NAME := "Yeet FBE Encryption"
