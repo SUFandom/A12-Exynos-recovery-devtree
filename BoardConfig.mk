@@ -145,6 +145,7 @@ SHRP_HAS_RECOVERY_PARTITION := true
 SHRP_EXCLUDE_MAGISK_FLASH := true # Hide Flashing Magisk Option due to Delta only works on A12 Exynos, Kitsune has yet to report
 SHRP_FLASH := 1
 SHRP_NOTCH := true
+SHRP_PATH := device/a12s/$(SHRP_DEVICE_CODE)
 
 SHRP_EXTERNAL_ADDON_PATH := "device/samsung/a12s/prebuilt/"
 
