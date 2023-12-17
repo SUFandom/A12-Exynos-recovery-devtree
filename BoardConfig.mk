@@ -130,6 +130,7 @@ TW_EXCLUDE_TWRPAPP := true
 # SHRP
 
 # TW_USE_TOOLBOX := true
+SHRP_EXPRESS := true
 SHRP_PATH := device/samsung/a12s 
 SHRP_MAINTAINER := SUFandom/Nyaruzan-Telegram
 SHRP_DEVICE_CODE := a12s 
