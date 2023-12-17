@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/samsung/a12s
+#DEVICE_PATH := device/samsung/a12s
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -115,7 +115,7 @@ TW_NO_SCREEN_TIMEOUT := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TARGET_USERIMAGES_USE_F2FS := true
-TW_DEVICE_VERSION := A12s_UA_v3.8-twrp_SUFandom
+TW_DEVICE_VERSION := A12s_UA_v1.0-shrp_SUFandom  # SHRP
 TW_MTP_DEVICE := "Galaxy A12s TWRPMTP"
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1600
@@ -125,4 +125,34 @@ TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_CRYPTO_FBE := false
 TW_INCLUDE_FBE_METADATA_DECRYPT := false
 TW_INCLUDE_FUSE_EXFAT := true
+TW_EXCLUDE_TWRPAPP := true
+
+# SHRP
+
+TW_USE_TOOLBOX := true
+SHRP_PATH := device/samsung/a12s 
+SHRP_MAINTAINER := SUFandom/Nyaruzan-Telegram
+SHRP_DEVICE_CODE := a12s 
+SHRP_EXTERNAL := /external_sd
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb-otg
+SHRP_REC := /dev/block/by-name/recovery
+SHRP_REC_TYPE := Treble
+SHRP_DEVICE_TYPE := A/B
+SHRP_AB := true
+SHRP_NO_SAR_AUTOMOUNT := true
+SHRP_HAS_RECOVERY_PARTITION := true
+SHRP_EXCLUDE_MAGISK_FLASH := true # Hide Flashing Magisk Option due to Delta only works
+SHRP_FLASH := 1
+SHRP_NOTCH := true
+
+SHRP_EXTERNAL_ADDON_PATH := "device/samsung/a12s/prebuilt/"
+
+# Added ext snippet
+SHRP_EXTERNAL_ADDON_1_NAME := "Yeet FBE Encryption"
+SHRP_EXTERNAL_ADDON_1_INFO := "This patch will yeet the FBE, before doing this, please set /data to ext4 then reboot to recovery, then flash this, after that set back /data to f2fs"
+SHRP_EXTERNAL_ADDON_1_FILENAME := "multidisabler-3.1.zip"
+SHRP_EXTERNAL_ADDON_1_BTN_TEXT := "Yeet the FBE"
+SHRP_EXTERNAL_ADDON_1_SUCCESSFUL_TEXT := "Yeeted the FBE"
+SHRP_INC_IN_REC_EXTERNAL_ADDON_1 := true
 
