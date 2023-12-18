@@ -20,6 +20,10 @@
 # These will be separated due to some functions
 # DO NOT PLAY AROUND WITH wipeingui
 
+# CHECK ORDER
+# <src> <type> <loc> <flags>
+
+
 /boot   emmc    /dev/block/by-name/boot flags=display="Boot, also called Android Kernel"
 /recovery   emmc    /dev/block/by-name/recovery flags=display=recovery
 /metadata   ext4    /dev/block/by-name/metadata flags=display=metadata

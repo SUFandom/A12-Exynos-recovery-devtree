@@ -6,9 +6,12 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 # FIX FOR TWRP CRYING ABOUT 64BIT SHID
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+# Stock Pull IN
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/pb/config/common.mk)
@@ -17,7 +20,7 @@ $(call inherit-product, vendor/pb/config/common.mk)
 $(call inherit-product, device/samsung/a12s/device.mk)
 
 PRODUCT_DEVICE := a12s
-PRODUCT_NAME := pb_a12s
+PRODUCT_NAME := omni_a12s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-A127F
 PRODUCT_MANUFACTURER := samsung
