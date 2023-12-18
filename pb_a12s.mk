@@ -11,13 +11,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
 # Inherit some common Omni stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Inherit from a12s device
 $(call inherit-product, device/samsung/a12s/device.mk)
 
 PRODUCT_DEVICE := a12s
-PRODUCT_NAME := twrp_a12s
+PRODUCT_NAME := pb_a12s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-A127F
 PRODUCT_MANUFACTURER := samsung
