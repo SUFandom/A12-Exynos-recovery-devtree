@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 # FIX FOR TWRP CRYING ABOUT 64BIT SHID
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 # Stock Pull IN
-# Disabling Full base telephonyals
+# Disabling Full base telephony
 # $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 
