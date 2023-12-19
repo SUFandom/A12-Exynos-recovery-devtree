@@ -19,12 +19,12 @@
 /dtbo               emmc      /dev/block/by-name/dtbo               flags=display=dtbo
 /prism              ext4      /dev/block/by-name/prism              flags=display=prism
 /optics             ext4      /dev/block/by-name/optics             flags=display=optics
-/vbmeta_system      emmc      /dev/block/by-name/vbmeta_system      flags=display=vbmeta_system
-/vendor_boot        emmc      /dev/block/by-name/vendor_boot        flags=display=vendor_boot
-/vbmeta_samsung     emmc      /dev/block/by-name/vbmeta_samsung     flags=display=vbmeta_samsung
-/system_ext         ext4      system_ext                            flags=display=system_ext;logical
-/vendor_dlkm        ext4      vendor_dlkm                           flags=display=vendor_dlkm;logical
-/system_dlkm        ext4      system_dlkm                           flags=display=system_dlkm;logical
+#/vbmeta_system      emmc      /dev/block/by-name/vbmeta_system      flags=display=vbmeta_system
+#/vendor_boot        emmc      /dev/block/by-name/vendor_boot        flags=display=vendor_boot
+#/vbmeta_samsung     emmc      /dev/block/by-name/vbmeta_samsung     flags=display=vbmeta_samsung
+#/system_ext         ext4      system_ext                            flags=display=system_ext;logical
+#/vendor_dlkm        ext4      vendor_dlkm                           flags=display=vendor_dlkm;logical
+#/system_dlkm        ext4      system_dlkm                           flags=display=system_dlkm;logical
 /init_boot          emmc      /dev/block/by-name/init_boot          flags=display=init_boot
 
 

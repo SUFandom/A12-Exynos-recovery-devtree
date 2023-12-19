@@ -31,12 +31,12 @@
 #/preload    ext4    /dev/block/by-name/hidden   flags=display=preload
 /prism  ext4    /dev/block/by-name/prism    flags=display=prism
 /optics ext4    /dev/block/by-name/optics   flags=display=optics
-/vbmeta_system  emmc    /dev/block/by-name/vbmeta_system    flags=display=vbmeta_system
-/vendor_boot    emmc    /dev/block/by-name/vendor_boot  flags=display=vendor_boot
-/vbmeta_samsung emmc    /dev/block/by-name/vbmeta_samsung   flags=display=vbmeta_samsung
-/system_ext ext4    /dev/block/by-name/system_ext  flags=display="System_EXT_AB"
-/vendor_dlkm    ext4    /dev/block/by-name/vendor_dlkm  flags=display="Vendor DLKM"
-/system_dlkm    ext4    /dev/block/by-name/system_dlkm  flags=display="System DLKM"
+#/vbmeta_system  emmc    /dev/block/by-name/vbmeta_system    flags=display=vbmeta_system
+#/vendor_boot    emmc    /dev/block/by-name/vendor_boot  flags=display=vendor_boot
+#/vbmeta_samsung emmc    /dev/block/by-name/vbmeta_samsung   flags=display=vbmeta_samsung
+#/system_ext ext4    /dev/block/by-name/system_ext  flags=display="System_EXT_AB"
+#/vendor_dlkm    ext4    /dev/block/by-name/vendor_dlkm  flags=display="Vendor DLKM"
+#/system_dlkm    ext4    /dev/block/by-name/system_dlkm  flags=display="System DLKM"
 /init_boot  emmc    /dev/block/by-name/init_boot    flags=display=init_boot
 
 
