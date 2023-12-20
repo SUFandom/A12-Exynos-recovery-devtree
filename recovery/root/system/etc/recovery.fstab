@@ -8,10 +8,10 @@
 /system_image   emmc    /dev/block/mapper/system    flags=backup=0;flashimg=1;display="System EMMC Image"
 /vendor_image   emmc    /dev/block/mapper/vendor    flags=backup=0;flashimg=1;display="Vendor Image"
 /external_sd    vfat    /dev/block/mmcblk1p1    /dev/block/mmcblk1  flags=storage;wipeingui;removable
-/system     ext4    /dev/block/mapper/system   flags=display="System Logic Partition";backup=1;wipeingui
-/vendor     ext4    /dev/block/mapper/vendor   flags=display="Vendor Logic Partition";wipeingui;backup=1
-/product    ext4    /dev/block/mapper/product  flags=display="Product Logic Partition";backup=1;flashimg=1;wipeingui
-/odm    ext4    /dev/block/mapper/odm  flags=display="ODM LOGIC Partition";wipeingui;backup=1
+/system     ext4    /dev/block/mapper/system   flags=display="System Logic Partition";backup=1;wipeingui;logical
+/vendor     ext4    /dev/block/mapper/vendor   flags=display="Vendor Logic Partition";wipeingui;backup=1;logical
+/product    ext4    /dev/block/mapper/product  flags=display="Product Logic Partition";backup=1;flashimg=1;wipeingui;logical
+/odm    ext4    /dev/block/mapper/odm  flags=display="ODM LOGIC Partition";wipeingui;backup=1;logical
 /usb-otg    auto    /dev/block/sda1 /dev/block/sda  flags=display="USB-OTG";storage;wipeingui;removable
 
 # AVOID USING /sdcard and sdfat, its not supported...
@@ -31,12 +31,12 @@
 #/preload    ext4    /dev/block/by-name/hidden   flags=display=preload
 /prism  ext4    /dev/block/by-name/prism    flags=display=prism
 /optics ext4    /dev/block/by-name/optics   flags=display=optics
-#/vbmeta_system  emmc    /dev/block/by-name/vbmeta_system    flags=display=vbmeta_system
-#/vendor_boot    emmc    /dev/block/by-name/vendor_boot  flags=display=vendor_boot
-#/vbmeta_samsung emmc    /dev/block/by-name/vbmeta_samsung   flags=display=vbmeta_samsung
-#/system_ext ext4    /dev/block/by-name/system_ext  flags=display="System_EXT_AB"
-#/vendor_dlkm    ext4    /dev/block/by-name/vendor_dlkm  flags=display="Vendor DLKM"
-#/system_dlkm    ext4    /dev/block/by-name/system_dlkm  flags=display="System DLKM"
+/vbmeta_system  emmc    /dev/block/by-name/vbmeta_system    flags=display=vbmeta_system
+/vendor_boot    emmc    /dev/block/by-name/vendor_boot  flags=display=vendor_boot
+/vbmeta_samsung emmc    /dev/block/by-name/vbmeta_samsung   flags=display=vbmeta_samsung
+/system_ext ext4    /dev/block/by-name/system_ext  flags=display="System_EXT_AB";logical
+/vendor_dlkm    ext4    /dev/block/by-name/vendor_dlkm  flags=display="Vendor DLKM";logical
+/system_dlkm    ext4    /dev/block/by-name/system_dlkm  flags=display="System DLKM";logical
 /init_boot  emmc    /dev/block/by-name/init_boot    flags=display=init_boot
 
 
