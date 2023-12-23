@@ -6,7 +6,7 @@
 
 case $1 in
     --recovery)
-        reboot recovery
+        pkill recovery && recovery
         ;;
     --download)
         reboot download
