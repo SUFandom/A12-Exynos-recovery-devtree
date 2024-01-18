@@ -1,5 +1,10 @@
 on init
     write /proc/sys/kernel/hung_task_timeout_secs 0
+    mount /dev/block/mapper/vendor /vendor
+    mount /dev/block/by-name/metadata /metadata
+
+on early-fs
+    start vold
 
 on late-init
     setprop ro.debuggable 1
@@ -7,4 +12,10 @@ on late-init
     setprop sys.usb.configfs 1
     setprop sys.usb.config adb
 
+on late-fs
+    exec_start wait_for_keymaster
+    mount_all /vendor/etc/fstab.exynos850 --late
+
+
 on boot
+
