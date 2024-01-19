@@ -1,6 +1,6 @@
 #!/system/bin/sh
-
-# /bin/sh CALL IS MEANT FOR DIAGNOSTICS!
+#!/bin/sh
+# THE /bin/sh CALL IS MEANT FOR DIAGNOSTICS! REMOVE IT ON PROD
 
 msg() {
     echo "$1"
@@ -27,13 +27,18 @@ printinfo() {
     msg " "
     msg "TWRP FOR GALAXY A12s - $(cat /system/twrp_version.note)"
     barrier_2
-    msg "Bootloader ID: $(getprop ro.boot.bootloader)"
-    msg "Android Version Release:"
-    msg "           Reported by GETPROP: $(getprop ro.build.version.release)"
-    msg "           By SUFandom Expects: 13 or 14 idk"
+    msg "Bootloader: $(getprop ro.boot.bootloader)"
+    msg "Brand: $(getprop ro.product.manufacturer)"
+    msg "Device: $(getprop ro.product.name)"
+    msg "Model: $(getprop ro.product.model)"
     msg "Hardware: $(getprop ro.hardware)"
     msg "Platform: $(getprop ro.board.platform)"
-    msg "SOC Manufacturer (If none, that's ok): $(getprop ro.soc.manufacturer)"
+    msg "CPU API: $(getprop ro.system.product.cpu.abilist)"
+    msg "Dynamic: $(getprop ro.boot.dynamic_partitions)"
+    msg "Android: $(getprop ro.build.version.release) , SDK: $(getprop ro.build.version.sdk)"
+    msg "ID: $(getprop ro.build.id)"
+	msg "Kernel: $(uname -r)"
+    msg""
     msg "END OF TWRPFETCH"
     barrier_2
 }
