@@ -15,7 +15,7 @@
 /usb-otg    auto    /dev/block/sda1 /dev/block/sda  flags=display="USB-OTG";storage;wipeingui;removable
 
 # SOME TWRP TMPFS CONTAINER
-/twrp-home  auto    /dev/block/mmcblk1 flags=storage;wipeingui;display="TWRP TMPFS"
+/twrp-home  auto    /dev/block/mmcblk1p1 flags=storage;wipeingui;display="TWRP TMPFS"
 
 # AVOID USING /sdcard and sdfat, its not supported...
 
