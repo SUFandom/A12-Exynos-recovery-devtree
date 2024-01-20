@@ -7,7 +7,6 @@
 /odm_image  emmc    /dev/block/mapper/odm   flags=backup=0;flashimg=1;display="ODM EMMC Image"
 /system_image   emmc    /dev/block/mapper/system    flags=backup=0;flashimg=1;display="System EMMC Image"
 /vendor_image   emmc    /dev/block/mapper/vendor    flags=backup=0;flashimg=1;display="Vendor Image"
-/home/pbrb    auto    /dev/block/mmcblk1p1    /dev/block/mmcblk1  flags=storage;wipeingui;removable
 /system     ext4    /dev/block/mapper/system   flags=display="System Logic Partition";backup=1;wipeingui
 /vendor     ext4    /dev/block/mapper/vendor   flags=display="Vendor Logic Partition";wipeingui;backup=1
 /product    ext4    /dev/block/mapper/product  flags=display="Product Logic Partition";backup=1;flashimg=1;wipeingui
