@@ -62,6 +62,12 @@ TARGET_KERNEL_SOURCE := kernel/samsung/a12s
 # BOARD_KERNEL_SEPARATED_DTBO := 
 # endif
 
+#Other By Edwins
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/bootimg.mk
+
 # Kernel - prebuilt - TDD788 Modifications
 TARGET_FORCE_PREBUILT_KERNEL := true
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
@@ -164,3 +170,4 @@ ENABLE_SCHEDBOOST := true
 BOARD_ROOT_EXTRA_FOLDERS := cache carrier data_mirror efs keyrefuge linkerconfig metadata omr optics sys prism
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_EXCLUDE_SUPERSU := true
+TWRP_NEW_THEME := true
