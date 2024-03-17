@@ -1,30 +1,72 @@
 #
-# Copyright (C) 2023 The Android Open Source Project
-# Copyright (C) 2023 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2024 The Android Open Source Project
+# Copyright (C) 2024 The TWRP Open Source Project
 #
-# SPDX-License-Identifier: Apache-2.0
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 #
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+DEVICE_PATH := device/samsung/a12s
+LOCAL_PATH := device/samsung/a12s
 
-# Inherit from those products. Most specific first.
+# Release name
+PRODUCT_RELEASE_NAME := a12s
+
+# Inherit from common AOSP config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-# FIX FOR TWRP CRYING ABOUT 64BIT SHID
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from a12s device
-$(call inherit-product, device/samsung/a12s/device.mk)
+# Inherit device configuration
 
-PRODUCT_DEVICE := a12s
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+    fastbootd
+
+# Props
+PRODUCT_PROPERTY_OVERRIDES +=\
+	ro.fastbootd.available=true
+	ro.boot.dynamic_partitions=true 
+	
+# TWRP Fastbootd
+TW_INCLUDE_FASTBOOTD := true
+
+# Apex Libraries
+PRODUCT_HOST_PACKAGES += \
+    libandroidicu
+
+# TWRP
+TW_INCLUDE_PYTHON := true
+TW_EXCLUDE_APEX := true
+
+## Device identifier. This must come after all inclusions
 PRODUCT_NAME := twrp_a12s
+PRODUCT_DEVICE := a12s
+PRODUCT_MODEL := a12s
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-A127F
 PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="a12snsxx-user 13 TP1A.220624.014 A127FXXUADWI2 release-keys"
+    PRIVATE_BUILD_DESC="a12sub-user 13 TP1A.220624.014 A127MUBUBDWK2.A127FXXSADWK2 release-keys"
 
-BUILD_FINGERPRINT := samsung/a12snsxx/a12s:13/TP1A.220624.014/A127FXXUADWI2:user/release-keys
+BUILD_FINGERPRINT := samsung/a12sub/a12s:13/TP1A.220624.014/A127MUBUBDWK2.A127FXXSADWK2:user/release-keys
